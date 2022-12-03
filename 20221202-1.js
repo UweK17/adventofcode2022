@@ -2500,10 +2500,13 @@ A Y
 A Z
 `;
 
-
+// Strin in Array
 let array = input.split('\n');
 console.log(array);
 let points = 0;
+
+//Für jedes Element e (Ergebnis RPS) werden die Punkte ermittelt und addiert
+//In Teil 1 fehlt der Zahlenwert für das Ergebnis (GUV)und muss zum Element addiert werden
 array.forEach((e) => {
   
   switch (e) {

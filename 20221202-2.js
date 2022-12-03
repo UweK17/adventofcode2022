@@ -2499,10 +2499,13 @@ C Z
 A Y
 A Z
 `;
-
+//String in array
 let array = input.split('\n');
 console.log(array);
 let points = 0;
+
+// Für jedes Element e (ErgebnisRPS) wird das ergebnis ermittelt
+// IN Teil 2 fehlt der Zahlenwert für das gewählte Element, und muss zum Ergebnis addiert werden
 array.forEach((e) => {
   
   switch (e) {

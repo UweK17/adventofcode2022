@@ -2267,25 +2267,25 @@ let input = `18313
 // 10000`;
 
 
-
-console.time('Function #1');
-let arrayfy = input.split('\n');
-console.log(arrayfy);
-let accumulator = 0;
-let arrayOfCalories = [];
-for(let i = 0; i < arrayfy.length; i++) {
-  if(arrayfy[i] !== '') {
-    accumulator += Number(arrayfy[i]);
+// String in Array
+let array = input.split('\n');
+console.log(array);
+let counter = 0;
+let newArray = [];
+//bis zum '' sollen die werte addiert werden, und wenn das '' kommt, wird die summe ins newArray gepusht, und counter auf 0, und von vorne
+for(let i = 0; i < array.length; i++) {
+  if(array[i] !== '') {
+    counter = counter + Number(array[i]);
   } else {
-    arrayOfCalories.push(accumulator);
-    accumulator = 0;
+    newArray.push(counter);
+    counter = 0;
   }
 }
-
-let sortedArray = arrayOfCalories.sort((a,b) => b - a);
+// absteigen sortieren, um höchsten zu finden
+let sortedArray = newArray.sort((a,b) => b - a);
 console.log(sortedArray);
+// Die 3 ersten Elfen
 console.log(sortedArray[0] + sortedArray[1] + sortedArray[2]);
-console.timeEnd('Function #1');
 
 
 
