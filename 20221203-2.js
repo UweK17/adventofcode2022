@@ -303,27 +303,31 @@ let array = [];
 // Split Strings into an Array with 3Elves
   array = input.split("\n");
   console.log(array);
-  //in 3er Gruppen, slice schneidet nach 3, 6, 9, usw. ab, und packt diese 3 in arrayOfThree i+=3, damit nach jedem dritten, ansonsten, bei i++ nimmt er immer die beiden vorherigen indizes mit
+  //in 3er Gruppen, elf1, elf2, elf3 kommen in ein array
 let sumArray = [];
 for(let i=0; i<array.length;i+=3){
   let elveOne = array[i];
   let elveTwo = array[i+1];
   let elveThree = array[i+2];
   console.log(elveOne, elveTwo, elveThree);
+  //es wird in einzelne buchstaben gesplittet
   let splittedElveOne = elveOne.split("");
   let splittedElveTwo = elveTwo.split("");
   let splittedElveThree = elveThree.split("");
   console.log(splittedElveOne);
   console.log(splittedElveTwo);
   console.log(splittedElveThree);
+  //elf1 und elf2 werden auf gemeinsame Buchstaben geprüft
   let showSameItemOneTwo = splittedElveOne.filter(sameItem => 
     splittedElveTwo.includes(sameItem));
+  // der gemeinsame elf1 und elf2 buchstabe wird mit elf3 verglichen
   let showSameItemToThree = showSameItemOneTwo.filter(sameItem => splittedElveThree.includes(sameItem));
   console.log(showSameItemToThree);
+  // es wird immer nur der erste gemeinsame buchstabe in ein array gepusht
   sumArray.push(showSameItemToThree[0]);
 }
 console.log(sumArray);
-//diese 3er Arrays werden in einzelne Buchstaben gesplittet
+//jeder buchstabe dieses arrays bekommt seine Priozahl
 let sum = 0;
 sumArray.forEach((e) => {
   switch (e) {
